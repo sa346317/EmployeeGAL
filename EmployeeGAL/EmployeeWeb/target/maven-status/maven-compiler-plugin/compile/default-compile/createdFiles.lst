@@ -1,0 +1,3 @@
+com\titan\LoginController\LoginServlet.class
+com\titan\GALController\GALServlet.class
+com\titan\LogoutController\LogoutServlet.class
