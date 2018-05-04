@@ -22,37 +22,37 @@
   	</dependency>
   </dependencies>  
  
- <build>
-	<finalName>EmployeeWeb</finalName>
-	<plugins>
-		<plugin>
-		  <groupId>com.spotify</groupId>
-		  <artifactId>docker-maven-plugin</artifactId>
-		  <version>0.4.5</version>
-		  <executions>
-		  	<execution>
-		  		<phase>install</phase>
-		  		<goals>
-		  			<goal>build</goal>
-		  		</goals>
-		  	</execution>
-		  </executions>		  
-		  <configuration>
-			<imageName>sandeep/${project.artifactId}</imageName>
-			<dockerDirectory>${basedir}/src/docker</dockerDirectory>
-			<!-- 
-			<dockerHost>http:192.168.99.100:2376</dockerHost>
-			 -->
-			<resources>
-			   <resource>
-				 <targetPath>/</targetPath>
-				 <directory>${project.build.directory}</directory>
-				 <include>${project.build.finalName}.war</include>
-			   </resource>
-			</resources>
-		  </configuration>
-		</plugin>
-	</plugins>
-</build>
+	<build>
+		<finalName>EmployeeWeb</finalName>
+		<plugins>
+			<plugin>
+			  <groupId>com.spotify</groupId>
+			  <artifactId>docker-maven-plugin</artifactId>
+			  <version>0.4.5</version>
+			  <executions>
+				<execution>
+					<phase>install</phase>
+					<goals>
+						<goal>build</goal>
+					</goals>
+				</execution>
+			  </executions>		  
+			  <configuration>
+				<imageName>sandeep/${project.artifactId}</imageName>
+				<dockerDirectory>${basedir}/src/docker</dockerDirectory>
+				<!-- 
+				<dockerHost>http:192.168.99.100:2376</dockerHost>
+				 -->
+				<resources>
+				   <resource>
+					 <targetPath>/</targetPath>
+					 <directory>${project.build.directory}</directory>
+					 <include>${project.build.finalName}.war</include>
+				   </resource>
+				</resources>
+			  </configuration>
+			</plugin>
+		</plugins>
+	</build>
    
 </project>
